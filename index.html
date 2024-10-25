@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetic License Card</title>
+  <style>
+    /* Style for the card container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    
+    /* Form styling */
+    .poetic-form {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 350px;
+    }
+
+    /* Card styling */
+    .poetic-card {
+      width: 350px;
+      height: 220px;
+      border-radius: 15px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Title styling */
+    .poetic-card h2 {
+      margin: 0;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Horizontal line */
+    .divider {
+      margin: 10px 0;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    /* Label and user input fields */
+    .field-label {
+      font-weight: bold;
+      color: #555;
+    }
+    .user-input {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <!-- Form for user input -->
+    <form class="poetic-form" id="poeticLicenseForm" onsubmit="generateLicense(); return false;">
+      <label class="field-label" for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label class="field-label" for="middleName">Middle Name:</label>
+      <input type="text" id="middleName" name="middleName">
+
+      <label class="field-label" for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label class="field-label" for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <button type="submit">Generate License</button>
+    </form>
+
+    <!-- Poetic License card -->
+    <div class="poetic-card">
+      <h2>Poetic License</h2>
+      <div class="divider"></div>
+      
+      <div>
+        <span class="field-label">Name:
+        <span class="user-input" id="displayFirstName"></span>
+        <br>
+        <br>
+        
+        <span class="field-label">Middle Name:</span>
+        <span class="user-input" id="displayMiddleName"></span>
+        <br>
+        <br>
+        
+        <span class="field-label">Last Name:</span>
+        <span class="user-input" id="displayLastName"></span>
+        <br>
+        <br>
+
+        <span class="field-label">Address:</span>
+        <span class="user-input" id="displayAddress"></span>
+        <br>
+        <br>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generateLicense() {
+      // Get input values
+      const firstName = document.getElementById("firstName").value;
+      const middleName = document.getElementById("middleName").value;
+      const lastName = document.getElementById("lastName").value;
+      const address = document.getElementById("address").value;
+
+      // Display values in the card
+      document.getElementById("displayFirstName").textContent = firstName;
+      document.getElementById("displayMiddleName").textContent = middleName;
+      document.getElementById("displayLastName").textContent = lastName;
+      document.getElementById("displayAddress").textContent = address;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetic License Card</title>
+  <style>
+    /* Style for the card container */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    
+    /* Card styling */
+    .poetic-card {
+      width: 350px;
+      height: 220px;
+      border-radius: 15px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Title styling */
+    .poetic-card h2 {
+      margin: 0;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Horizontal line */
+    .divider {
+      margin: 10px 0;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    /* Label and user input fields */
+    .field-label {
+      font-weight: bold;
+      margin: 5px 0;
+      color: #555;
+    }
+    .user-input {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+    
+  
+  <!-- Card container -->
+  <!--<div class="card-container">
+    <!-- Poetic License card -->
+    <!--<div class="poetic-card">
+      <h2>Poetic License</h2>
+      <div class="divider"></div>
+      
+      <div>
+        <p class="field-label">Name:</p>
+        <p class="user-input" id="displayFirstName"></p>
+
+        <p class="field-label">Middle Name:</p>
+        <p class="user-input" id="displayMiddleName"></p>
+
+        <p class="field-label">Last Name:</p>
+        <p class="user-input" id="displayLastName"></p>
+
+        <p class="field-label">Address:</p>
+        <p class="user-input" id="displayAddress"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample user data (replace this with real user inputs from a form)
+    const userData = {
+      firstName: "Hassan",
+      middleName: "A.",
+      lastName: "Doe",
+      address: "123 Main St, Springfield",
+    };
+
+    // Display user data on the card
+    document.getElementById("displayFirstName").textContent = userData.firstName;
+    document.getElementById("displayMiddleName").textContent = userData.middleName;
+    document.getElementById("displayLastName").textContent = userData.lastName;
+    document.getElementById("displayAddress").textContent = userData.address;
+  </script>
+</body>
+</html>
+
+
+-->
+
+
+
+
+
+
+
+
+<!--
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetic License Generator</title>
+</head>
+<style>
+    /* Style for the card container */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    
+    /* Card styling */
+    .poetic-card {
+      width: 350px;
+      height: 220px;
+      border-radius: 15px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Title styling */
+    .poetic-card h2 {
+      margin: 0;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Horizontal line */
+    .divider {
+      margin: 10px 0;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    /* Label and user input fields */
+    .field-label {
+      font-weight: bold;
+      margin: 5px 0;
+      color: #555;
+    }
+    .user-input {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+  </style>
+<body>
+  <h2>Enter Your Details for the Poetic License</h2>
+  <form id="poeticLicenseForm" onsubmit="generateLicense(); return false;">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    
+    <label for="middleName">Middle Name:</label>
+    <input type="text" id="middleName" name="middleName"><br><br>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br><br>
+    
+    <button type="submit">Generate License</button>
+  </form>
+
+  <!-- Div to display the generated license info -->
+  <div id="licenseDisplay" style="display:none; margin-top: 20px;">
+    <h2>Your Poetic License</h2>
+    <p id="displayFirstName"></p>
+    <p id="displayMiddleName"></p>
+    <p id="displayLastName"></p>
+    <p id="displayAddress"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+-->
